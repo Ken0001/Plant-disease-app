@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button_open_bottom_sheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/responseText"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:text="選擇圖片" />
+
+        <EditText
+            android:id="@+id/imgPath"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/button_open_bottom_sheet"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:hint="檔案名稱" />
+
+        <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/btnTakePic"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:text="拍攝照片" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:onClick="selectImage"
+                android:text="選擇圖片"
+                android:textStyle="bold" />
+        </LinearLayout>
+        -->
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="connectServer"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/imgPath"
+            android:id="@+id/submit"
+            android:textStyle="bold"
+            android:text="上傳"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/responseText"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:textColor="#FF0000"
+            android:textStyle="bold"/>
+
+
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="450dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/submit"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/result_box"
+            android:layout_below="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/l1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                >
+                <TextView
+                    android:id="@+id/pred_res"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/l2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/l1"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text=""
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/black_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text=""
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/l3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/l2"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/mg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text=""
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/mg_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text=""
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/l4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/l3"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/moth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text=""
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/moth_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text=""
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/l5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/l4"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/oil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/oil_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+
+                    android:text=""
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/l6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/l5"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/health"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/health_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:gravity="left"
+                    android:text=""
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+        <!--
+                <com.github.clans.fab.FloatingActionMenu
+                    android:id="@+id/menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/submit"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+
+                    android:layout_gravity="right">
+
+
+                    <com.github.clans.fab.FloatingActionButton
+                        android:id="@+id/menu_item2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_add_photo_alternate_white_24dp"
+
+                        fab:fab_size="mini"
+                        fab:fab_label="選擇圖片" />
+
+                    <com.github.clans.fab.FloatingActionButton
+                        android:id="@+id/menu_item3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_camera_alt_white_24dp"
+                        fab:fab_size="mini"
+                        fab:fab_label="拍攝照片" />
+
+                </com.github.clans.fab.FloatingActionMenu>
+        -->
+
+
+    </RelativeLayout>
+</ScrollView>
+
+
